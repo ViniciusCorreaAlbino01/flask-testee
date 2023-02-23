@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(244, 244, 244);
+
+}
+
+.logo{
+    display: none;
+}
+
+.barra{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.progress_bar{
+    width: 70%;
+    border-radius: 10px;
+    height: 100%;
+    background-color: #d00909;
+}
+
+.container{
+    display: flex;
+}
+
+.bloco{
+    margin: 150px 100px 0px 130px;
+    width: 50%;
+    padding: 25px;
+}
+
+.foto {
+    display: inline-block;
+    width: 36.6%;
+    height: 1000px;
+}
+
+
+.foto img{
+    width: 36.6%;
+    height: 1000px;
+    position: fixed;
+    z-index: 4;
+}
+
+form>h1{
+    padding: 0px 10px;
+    font-weight: bolder;
+    margin-bottom: 60px;
+}
+
+
+form>label{
+    font-size: 1.25em;
+    margin: 0px 0px 0px 20px;
+}
+
+
+
+form>input[type=text],form>input[type=tel],form>input[type=number],.selects>input[type=date],select{
+    display: block;
+    padding-left: 10px;
+    border-radius: 12px;
+    border-color: #36363699;
+    border-width: 1px 1px 1px 1px;
+    margin: 10px 0px 20px 20px;
+    width: 400px;
+    height: 40px;
+}
+
+form>input::placeholder{
+    font-size: 1.2em;
+
+}
+
+form>input:invalid{
+    border: 1px solid #d00909;
+}
+
+.termo{
+    margin: 50px 0px 0px 25px;
+}
+
+.termo label{
+    font-size: 1em;
+}
+
+.termo label a {
+    color: #d00909;
+}
+
+.botoes a{
+    margin: 0px 0px 0px 30px;
+    font-size: 1.3em;
+    color: #bb0808;
+}
+
+
+.btn{
+    padding-left: 10px;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 12px;
+    margin: 15px 0px 20px 20px;
+    background-color: #bb0808;
+    color: white;
+    height: 60px;
+    width: 400px;
+    border-color: #bb0808;
+    cursor: pointer;
+    font-size: 1.5em;
+    box-shadow: 2px 1px rgba(0, 0, 0, 0.372);
+    font-weight: bolder;
+}
+
+.btn:hover{
+    transition: 1s;
+    background-color: #d00909;
+}
+
+.btn:active{
+    transition: 1s;
+    background-color: #d00909;
+    border-color: black;
+    border-width: 1.5px;
+}
+
+
+.bloco_iframe_grande, .bloco_iframe_pequeno,.bloco_iframe_medio{
+    width: 64%;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+.bloco_iframe_grande h1, .bloco_iframe_pequeno h1,.bloco_iframe_medio h1{
+    text-align: center;
+
+}
+
+.imagens{
+    width: 75%;
+    margin: 0px auto;
+    display: block;
+
+}
+.bloco_iframe_pequeno,.bloco_iframe_medio{
+    display: none;
+}
+
+.imagem_barco_menor{
+    display: none;
+}
+
+iframe{
+    display: block;
+    margin: 0px auto;
+}
+
+.autorizar{
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+#foto2{
+    height: 500px;
+}
+
+#nome_mae{
+    margin-bottom: 30px;
+}
+
+
+
+
+@media screen and (max-width: 1370px){
+    .bloco_iframe_medio{
+        display: block;
+    }
+    .bloco_iframe_grande{
+        display: none;
+    }
+    .imagem_barco_menor{
+        display: block;
+    }
+    .foto img{
+        margin-top: -180px;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .bloco_iframe_medio{
+        display: none;
+    }
+    .bloco_iframe_pequeno{
+        display: block;
+    }
+    .foto{
+        display: none;
+    }
+    .bloco_iframe_grande, .bloco_iframe_pequeno,.bloco_iframe_medio,.bloco{
+        width: 100%;
+    }
+    .bloco{
+        margin: 0px;
+    }
+    h1{
+        font-size: 1.7em;
+    }
+    .logo{
+        display: block;
+        width: 50px;
+        margin: 30px 0px 0px 80px;
+    }
+    
+}
+
+@media screen and (max-width: 575px){
+
+    iframe{
+        padding-bottom: 130px;
+    }
+
+    .progress_bar{
+        width: 56%;
+    }
+    .barra{
+        height: 6px;
+    }
+
+    .logo{
+        margin: 10px 0px 0px 22px;
+    }
+
+    form>input[type=text],form>input[type=tel],form>input[type=number]{
+        width: 93%;
+    }
+    .selects>input[type=date]{
+        display: inline-block;
+        width: 160px;
+        height: 37px;
+        margin: 0px 0px 10px 0px;
+    }
+
+    .selects>select, .selects{
+        margin: 0px 0px 10px 0px;
+        width: 45.1%;
+    }
+
+    .selects{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 90%;
+        align-items: center;
+    }
+    .selects>label{
+        width: 45.1%;
+        margin-bottom: 10px;
+    }
+
+    form label{
+        font-size: 1em;
+    }
+
+    select,.selects>input[type=date] {
+        color: black;
+    }
+
+    h1{
+        font-size: 1.5em;
+    }
+    
+    .botoes{
+        position: fixed;
+        width: 100%;
+        height: 85px;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(to bottom,rgb(244,244,244),white);
+        box-shadow: 0 -20px 20px rgb(244, 244, 244);
+    }
+    .btn{
+        width: 80%;
+        margin: 0px auto;
+        display: block;
+    }
+    #nome_mae{
+        margin-bottom: 160px;
+    }
+}

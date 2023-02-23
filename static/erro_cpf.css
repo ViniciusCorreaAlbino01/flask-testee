@@ -1,0 +1,483 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(244, 244, 244);
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.modal-content{
+    background-color: white;
+    width: 17%;
+    border-radius: 10px;
+    box-shadow: 5px 4px rgba(0, 0, 0, 0.169);
+    height: 300px;
+    margin: 0 auto;
+    
+}
+
+.atencao{
+    width: 40%;
+    display: block;
+    margin: 0 auto -30px;
+}
+
+.modal-content h1{
+    padding: 30px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.modal-content p{
+    font-size: 0.8em;
+    text-align: center;
+    color: #d00909;
+    
+}
+
+.modal-content>a>.btn,.modal-content>.btn{
+    height: 30px;
+    width: 30%;
+    display: block;
+    margin: 28px auto 0px;
+    padding: 0px;
+    border-radius: 0px;
+    font-size: 1em;
+}
+.logo{
+    display: none;
+}
+
+.barra{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.progress_bar{
+    width: 55%;
+    border-radius: 10px;
+    height: 100%;
+    background-color: #d00909;
+}
+
+.container{
+    display: flex;
+}
+
+.bloco{
+    margin: 150px 100px 0px 130px;
+    width: 50%;
+    padding: 25px;
+}
+
+.foto {
+    display: inline-block;
+    width: 36.6%;
+    height: 950px;
+}
+
+
+.foto img{
+    width: 36.6%;
+    height: 1000px;
+    position: fixed;
+    z-index: 4;
+}
+
+form>h1{
+    padding: 0px 10px;
+    font-weight: bolder;
+    margin-bottom: 60px;
+}
+
+
+form>label{
+    font-size: 1.25em;
+    margin: 0px 0px 0px 20px;
+}
+
+form>p{
+    margin-left: 23px;
+    color: #d00909;
+    margin-bottom: 20px;
+}
+
+#cpf{
+    border: 1px solid #d00909;
+    margin-bottom: 10px;
+    color: #d00909;
+}
+
+label[for=cpf]{
+    color: #d00909;
+}
+
+#cpf::placeholder{
+    color: #d00909;
+}
+
+
+
+form>input[type=text],form>input[type=tel],form>input[type=number],form>input[type=date],form>select{
+    display: block;
+    padding-left: 10px;
+    border-radius: 12px;
+    border-color: #36363699;
+    border-width: 1px 1px 1px 1px;
+    margin: 10px 0px 20px 20px;
+    width: 400px;
+    height: 40px;
+}
+
+form>input::placeholder{
+    font-size: 1.2em;
+
+}
+
+.termo{
+    margin: 50px 0px 0px 25px;
+}
+
+.termo label{
+    font-size: 1em;
+}
+
+.termo label a {
+    color: #d00909;
+}
+
+.botoes a{
+    margin: 0px 0px 0px 30px;
+    font-size: 1.3em;
+    color: #bb0808;
+}
+
+
+.btn{
+    padding-left: 10px;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 12px;
+    margin: 15px 0px 20px 20px;
+    background-color: #bb0808;
+    color: white;
+    height: 60px;
+    width: 400px;
+    border-color: #bb0808;
+    cursor: pointer;
+    font-size: 1.5em;
+    box-shadow: 2px 1px rgba(0, 0, 0, 0.372);
+    font-weight: bolder;
+}
+
+.btn:hover{
+    transition: 1s;
+    background-color: #d00909;
+}
+
+.btn:active{
+    transition: 1s;
+    background-color: #d00909;
+    border-color: black;
+    border-width: 1.5px;
+}
+
+
+.bloco_iframe_grande, .bloco_iframe_pequeno,.bloco_iframe_medio{
+    width: 64%;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+.bloco_iframe_grande h1, .bloco_iframe_pequeno h1,.bloco_iframe_medio h1{
+    text-align: center;
+
+}
+
+.imagens{
+    width: 75%;
+    margin: 0px auto;
+    display: block;
+
+}
+.bloco_iframe_pequeno,.bloco_iframe_medio{
+    display: none;
+}
+
+.imagem_barco_menor{
+    display: none;
+}
+
+iframe{
+    display: block;
+    margin: 0px auto;
+}
+
+.autorizar{
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+#foto2{
+    height: 500px;
+}
+
+#nome_mae{
+    margin-bottom: 30px;
+}
+
+
+.link_facta{
+    color: #d00909;
+    font-size: 1.5em;
+    margin: 80px 0px;
+    display: block;
+}
+
+.link{
+    color: #d00909;
+}
+
+.title{
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+h2{
+    margin-bottom: 25px;
+}
+
+.modal-content>a,.btn>a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0px;
+}
+
+#sad_face{
+    width: 10%;
+    display: inline-block;
+}
+
+#voltar{
+    margin-top: 25px;
+    font-size: 1.3em;
+}
+
+#voltar>a{
+    color: #d00909;
+}
+
+#erro_404{
+    display: inline-block;
+    font-size: 3em;
+}
+
+.simulacoes h1{
+    text-align: center;
+}
+
+.simulacoes table{
+    margin: 80px auto 0px auto;
+    width: 55%;
+    border-collapse: collapse;
+}
+
+.simulacoes table tbody tr{
+    border-bottom: 1px ridge rgba(0, 0, 0, 0.181);
+
+}
+
+
+.simulacoes table tbody tr td{
+    font-size: 1.2em;
+    vertical-align: bottom;
+    text-align: center;
+    padding-top: 30px;   
+
+}
+
+.simulacoes table tbody tr td + td{
+    color: #000000a1;
+}
+
+
+.simulacoes .btn{
+    margin: 100px auto 0px auto;
+    display: block;
+}
+
+#logo_whats{
+    width: 128px;
+    height: 72px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.botoes a{
+    display: none;
+    margin: 0px 0px 0px 30px;
+    font-size: 1.3em;
+    color: #bb0808;
+}
+@media screen and (max-width: 1370px){
+    .bloco_iframe_medio{
+        display: block;
+    }
+    .bloco_iframe_grande{
+        display: none;
+    }
+    .imagem_barco_menor{
+        display: block;
+    }
+    .foto img{
+        margin-top: -180px;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    .bloco_iframe_medio{
+        display: none;
+    }
+    .bloco_iframe_pequeno{
+        display: block;
+    }
+    .foto{
+        display: none;
+    }
+    .bloco_iframe_grande, .bloco_iframe_pequeno,.bloco_iframe_medio,.bloco{
+        width: 100%;
+    }
+    .bloco{
+        margin: 0px;
+    }
+    h1{
+        font-size: 1.7em;
+    }
+    .logo{
+        display: block;
+        width: 50px;
+        margin: 30px 0px 0px 80px;
+    }
+
+    #sad_face{
+        width: 10%;
+        display: inline-block;
+    }
+
+    #voltar{
+        margin-top: 25px;
+        font-size: 0.8em;
+    }
+
+    #erro_404{
+        display: inline-block;
+        font-size: 2.2em;
+    }
+    
+}
+
+@media screen and (max-width: 575px){
+
+    #sad_face{
+        width: 7%;
+        display: inline-block;
+    }
+
+    #voltar{
+        margin-top: 25px;
+        font-size: 0.8em;
+    }
+
+    #erro_404{
+        display: inline-block;
+        font-size: 1.25em;
+    }
+
+    iframe{
+        padding-bottom: 130px;
+    }
+
+    .progress_bar{
+        width: 36%;
+    }
+    .barra{
+        height: 6px;
+    }
+
+    .logo{
+        margin: 10px 0px 0px 22px;
+    }
+
+    form>input[type=text],form>input[type=tel],form>input[type=number],form>input[type=date],form>input[type=select]{
+        width: 90%;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    
+    .botoes{
+        position: fixed;
+        width: 100%;
+        height: 130px;
+        left: 0;
+        bottom: 0;
+        background-image: linear-gradient(to bottom,rgb(244,244,244),white);
+        box-shadow: 0 -20px 20px rgb(244, 244, 244);
+    }
+    .btn{
+        width: 80%;
+        margin: 0px auto;
+        display: block;
+    }
+    .botoes a{
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        padding: 0px 20px 0px 0px;
+    }
+
+    .modal-content{
+        width: 85%;
+        height: 330px;
+    }
+
+    .simulacoes table tbody tr td{
+        font-size: 1em;
+        vertical-align: bottom;
+        text-align: center;
+        padding-top: 30px;   
+    
+    }
+
+    #logo_whats{
+        display: none;
+    }
+    .termo label a{
+        padding-bottom: 150px;
+    }
+
+
+
+}
