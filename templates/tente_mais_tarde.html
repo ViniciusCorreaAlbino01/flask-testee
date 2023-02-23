@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static',filename = 'imagens/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'style.css')}}">
+    <title>Auto Contratação - Créditos Cidade Azul</title>
+</head>
+<body>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <img src="{{ url_for('static',filename = 'imagens/atencao.png')}}" alt="" class="atencao">
+            <h1>Atenção!!</h1>
+            <p>No momento o sistema do banco não está operando por favor tente novamente mais tarde!! </p>
+            <button onclick="fecharModal()" class="btn">Ok</button>
+        </div>
+    </div>
+    <img src="{{ url_for('static',filename = 'imagens/logo.png')}}" alt="" class="logo">
+    <main class="container">
+        <div class="foto">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado.jpg')}}" alt="">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado_menor.jpg')}}" alt="" class="imagem_barco_menor">
+        </div>
+        <div class="bloco">
+            <div class="barra">
+                <div class="progress_bar"></div>
+            </div>
+            <form action="/" method="POST" id="form">
+                <h1>Contrate você mesmo sua margem INSS!! Para contratar preencha os dados abaixo:</h1>
+                <label for="cpf">CPF:</label>
+                {{ form.cpf (placeholder='000.000.000-00')}}
+                <label for="nome">Nome:</label>
+                {{ form.nome (placeholder='Digite seu nome completo')}}
+                <label for="telefone">Telefone:</label>
+                {{ form.telefone (placeholder='(00) 00000-0000')}}
+                <label for="nascimento">Data de nascimento:</label>
+                {{ form.data_nascimento (value=data_nascimento)}}
+                <div class="termo">
+                <input type="checkbox" name="" id="termo" class="checkbox" required>
+                <label for="">Aceito os <a href="https://creditoscidadeazul.com.br/politica-de-privacidade/" target="_blank">Termos de Uso e Política de Privacidade</a></label></div>
+                <div class="botoes">
+                    <input type="submit" value="Prosseguir" class="btn">
+                    <a href="https://wa.me/5548996081051" target="_blank">Fale Conosco</a>
+                </div>
+            </form>
+        </div>
+        <a href="https://wa.me/5548996081051" target="_blank"><img id="logo_whats" src="{{ url_for('static',filename = 'imagens/WhatsApp-Logo.png')}}" alt=""></a>
+    
+    </main>
+    <script>
+        function fecharModal(){
+            document.getElementById('modal').style.display = 'none'
+        }
+    </script>
+</body>
+</html>
+
+    
+
+

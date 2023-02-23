@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static',filename = 'imagens/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'pag4.css')}}">
+    <script src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>Auto Contratação - Créditos Cidade Azul</title>
+</head>
+<body>
+    <img src="{{ url_for('static',filename = 'imagens/logo.png')}}" alt="" class="logo">
+    <main class="container">
+        <div class="foto">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado.jpg')}}" alt="">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado_menor.jpg')}}" alt="" class="imagem_barco_menor">
+        </div>
+        <div class="bloco">
+            <div class="barra">
+                <div class="progress_bar"></div>
+            </div>
+            <div>
+                <h1>Finalizamos sua proposta!! Clique em <strong>Copiar Link</strong> para realizar sua assinatura digital!!</h1>
+                <div class="botoes">
+                    <button class="btn" onclick="CopiarLink()">Copiar Link</button>
+                    <a href="#formalizar">Como formalizar</a>
+                </div>
+            </div>
+        </div>
+    
+    
+    </main>
+    <main class="container" id="formalizar">
+        <div class="foto" id="foto2">
+        </div>
+    <div class="bloco_iframe_grande">
+        <h1 class="autorizar">Como formalizar</h1>
+        <iframe class="video" width="940" height="529,2" src="https://www.youtube.com/embed/VZeBA2R8Cdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+        <p>Caso ainda lhe reste dúvidas entre em contato conosco pelo <a target="_blank" href="http://wa.me/5548996081051">Whatsapp</a></p>
+    </div>
+    <div class="bloco_iframe_medio">
+        <h1 class="autorizar">Como autorizar</h1>
+        <iframe width="627,2" height="352,8" src="https://www.youtube.com/embed/VZeBA2R8Cdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p>Caso ainda lhe reste dúvidas entre em contato conosco pelo <a target="_blank" href="http://wa.me/5548996081051">Whatsapp</a></p>
+    </div>
+    
+    <div class="bloco_iframe_pequeno">
+        <h1 class="autorizar">Como autorizar</h1>
+        <iframe width="352,8" height="198,45" src="https://www.youtube.com/embed/VZeBA2R8Cdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p>Caso ainda lhe reste dúvidas entre em contato conosco pelo <a target="_blank" href="http://wa.me/5548996081051">Whatsapp</a></p>
+    </div>
+    </main>
+    <p id="link">{{  link }}</p>
+    <script>
+        async function CopiarLink(){
+            texto = document.getElementById('link').innerText
+            await navigator.clipboard.writeText(texto)
+        }
+    </script>
+</body>
+</html>
+
+    
+
+

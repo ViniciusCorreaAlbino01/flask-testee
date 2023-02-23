@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static',filename = 'imagens/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'style.css')}}">
+    <title>Auto Contratação - Créditos Cidade Azul</title>
+</head>
+<body>
+    <img src="{{ url_for('static',filename = 'imagens/logo.png')}}" alt="" class="logo">
+    <main class="container">
+        <div class="foto">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado.jpg')}}" alt="">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado_menor.jpg')}}" alt="" class="imagem_barco_menor">
+        </div>
+        <div class="bloco">
+            <div class="barra">
+                <div class="progress_bar"></div>
+            </div>
+        <div class="simulacoes">
+            <h1>Informações do Contrato</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Valor Liberado</td>
+                        <td>R$ {{valor_operacao}}</td>
+                    </tr>
+                    <tr>
+                        <td>Banco</td>
+                        <td>Facta</td>
+                    </tr>
+                    <tr>
+                        <td>Prazo</td>
+                        <td>84x</td>
+                    </tr>
+                    <tr>
+                        <td>Parcela</td>
+                        <td>R$ {{parcela}}</td>
+                    </tr>
+                    <tr>
+                        <td>Taxa de Juros</td>
+                        <td>{{taxa}}% a.m.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn" onclick="location.href = '/contratar'">Contratar Agora</button>
+        </div>
+</body>
+</html>
+
+    
+
+

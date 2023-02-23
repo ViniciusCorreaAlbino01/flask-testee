@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static',filename = 'imagens/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'backup_pag2.css')}}">
+    <title>Auto Contratação - Créditos Cidade Azul</title>
+</head>
+<body>
+    <img src="{{ url_for('static',filename = 'imagens/logo.png')}}" alt="" class="logo">
+    <main class="container">
+        <div class="foto">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado.jpg')}}" alt="">
+            <img src="{{ url_for('static',filename = 'imagens/Fundo_barco_editado_menor.jpg')}}" alt="" class="imagem_barco_menor">
+        </div>
+        <div class="bloco">
+            <div class="barra">
+                <div class="progress_bar"></div>
+            </div>
+            <form action="/contratar" method="POST" id="form" class="form1">
+                <h1 class="form1">Continue com seu cadastro para finalizar o contrato!!</h1>
+                <label for="sexo" class="form1">Sexo:</label>
+                {{ form.sexo (class='form1')}}
+                <label for="rg" class="form1">Numéro do documento:</label>
+                {{ form.rg (placeholder='N° do seu documento', value = rg,class='form1')}}
+                <label for="orgao_emissor" class="form1">Órgão emissor:</label>
+                {{ form.orgao_emissor (class='form1')}}
+                <label for="estado_expedidor" class="form1">Estado de emissão:</label>
+                {{ form.estado_expedidor (class='form1')}}
+                <label for="data_expedicao" class="form1">Data de emissão:</label>
+                {{ form.data_expedicao (value=data_expedicao,class='form1')}}
+                <label for="nome_pai" class="form1">Nome do seu pai:</label>
+                {{ form.nome_pai (placeholder = 'Nome completo do seu pai',value = nome_pai,class='form1') }}
+                <label for="nome_mae" class="form1">Nome da sua mãe:</label>
+                {{ form.nome_mae (placeholder = 'Nome completo da sua mãe' ,value = nome_mae,class='form1') }}
+                <div class="botoes">
+                    <button class="btn" id="botao1" onclick="trocar_form()">Prosseguir</button>
+                </div>
+                <h1 class="form2">Falta apenas mais uma etapa para terminarmos seu contrato!!</h1>
+                <label for="endereco" class="form2">Endereço:</label>
+                {{ form.endereco (placeholder='Preencha com o seu logradouro',value = endereco,class='form2')}}
+                <label for="num" class="form2">Número</label>
+                {{ form.num (placeholder='Preencha com o N° da sua casa',value = num,class='form2')}}
+                <label for="bairro" class="form2">Bairro:</label>
+                {{ form.bairro (placeholder='Preencha com o seu bairro',value=bairro,class='form2')}}
+                <label for="cidade" class="form2">Cidade:</label>
+                {{ form.cidade (placeholder='Preencha com a sua cidade',value=cidade,class='form2')}}
+                <label for="estado" class="form2">Estado:</label>
+                {{ form.estado (class='form2')}}
+                <label for="cep" class="form2">CEP:</label>
+                {{ form.cep (placeholder='Preencha com seu CEP',value=cep,class='form2') }}
+                <label for="banco" class="form2">Banco:</label>
+                {{ form.banco (placeholder = 'Preencha com o código do seu banco Ex: 001',class='form2') }}
+                <label for="agencia" class="form2">Agência:</label>
+                {{ form.agencia (placeholder = 'Preencha com o N° da sua agência Ex: 0001',class='form2') }}
+                <label for="conta" class="form2">Conta:</label>
+                {{ form.conta (placeholder = 'Preencha com o N° da sua conta',class='form2') }}
+                <div class="botoes">
+                    <input type="submit" value="Prosseguir" class="btn" id="botao2">
+                </div>
+            </form>
+        </div>
+    
+    </main>
+    <script>
+        function trocar_form(){
+            if(document.getElementById('sexo').value != '' && document.getElementById('rg').value != '' && document.getElementById('orgao_emissor').value != '' && document.getElementById('estado_expedidor').value != '' && document.getElementById('data_expedicao').value != '' && document.getElementById('nome_pai').value != '' && document.getElementById('nome_mae').value != ''){var elements1 = document.querySelectorAll('#form>.form1')
+            var elements2 = document.querySelectorAll('#form>.form2')
+            var index1 = 0,length1 = elements1.length
+            var index2 = 0,length2 = elements2.length
+            for (;index1<length1;index1++){
+                elements1[index1].style.display = 'none'
+            }
+            for (;index2<length2;index2++){
+                elements2[index2].style.display = 'block'
+            }
+            document.querySelector('#botao1').style.display = 'none'
+            document.querySelector('#botao2').style.display = 'block'
+            document.querySelector('.form1+div').style.display = 'none'
+            document.querySelector('.form2+div').style.display = 'block'
+            
+            }
+        }
+    </script>
+</body>
+</html>
+
+    
+
+
