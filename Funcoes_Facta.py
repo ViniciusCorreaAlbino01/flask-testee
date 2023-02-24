@@ -91,8 +91,12 @@ def finalizar_cadastro_facta(token,codigo_cliente,id_simulador):
 
      response = requests.post(url,data=payload,headers=headers).json()
      if response['erro']:
-          af = response['message']
-          url = 'erro'
+          try:
+               af = response['message']
+               url = 'erro'
+          except:
+               af = response['mensagem']
+               url = 'erro'
      else:
           af = response['codigo']
           url = response['url_formalizacao']
