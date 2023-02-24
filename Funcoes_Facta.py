@@ -53,6 +53,7 @@ def cadastrar_simulacao_facta(token,tipo_operacao,cpf,data_nascimento,codigo_tab
      }
 
      response = requests.post(url,data=payload,headers=headers).json()
+     print(response)
      id_simulador = response['id_simulador']
      return id_simulador
 
