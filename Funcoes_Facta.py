@@ -90,6 +90,7 @@ def finalizar_cadastro_facta(token,codigo_cliente,id_simulador):
           }
 
      response = requests.post(url,data=payload,headers=headers).json()
+     print(response)
      af = response['codigo']
      url = response['url_formalizacao']
      return af,url
