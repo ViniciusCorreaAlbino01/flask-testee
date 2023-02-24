@@ -71,11 +71,11 @@ def homepage():
     except:
         return render_template('index.html', form=form)
     if Cliente_atual.cpf != None:
-        try:
-            Cliente_atual.token_facta = get_token_facta ()
-            Cliente_atual.especie, Cliente_atual.salario, Cliente_atual.matricula, Cliente_atual.margem_novo = consulta_database(Cliente_atual.cpf)
-        except:
-            return render_template('tente_mais_tarde.html',form = form)
+#         try:
+        Cliente_atual.token_facta = get_token_facta ()
+        Cliente_atual.especie, Cliente_atual.salario, Cliente_atual.matricula, Cliente_atual.margem_novo = consulta_database(Cliente_atual.cpf)
+#         except:
+#             return render_template('tente_mais_tarde.html',form = form)
         try:
             Cliente_atual.taxa,Cliente_atual.codigo_tabela, Cliente_atual.valor_operacao, Cliente_atual.coeficiente =  simular_facta(Cliente_atual.token_facta,Cliente_atual.margem_novo,84,Cliente_atual.cpf,Cliente_atual.data_nascimento,Cliente_atual.especie)
         except:
