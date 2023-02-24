@@ -112,6 +112,9 @@ def contratar():
         Cliente_atual.banco = request.form.get("banco")
         Cliente_atual.agencia = request.form.get("agencia")
         Cliente_atual.conta = request.form.get("conta")
+        Cliente_atual.especie = request.form.get("especie")
+        Cliente_atual.matricula = request.form.get("matricula")
+        Cliente_atual.tipo_conta = request.form.get("tipo_conta")
         Cliente_atual.token_facta = get_token_facta()
     except:
         None
@@ -130,7 +133,7 @@ def contratar():
 #                 return render_template('Erro.html')
 #         try:
         Cliente_atual.cidade_codigo = get_cidade_facta(Cliente_atual.token_facta,Cliente_atual.estado,Cliente_atual.cidade)
-        Cliente_atual.codigo_cliente = cadastrar_dados_pessoais_facta(Cliente_atual.token_facta,Cliente_atual.id_simulador,Cliente_atual.cpf,Cliente_atual.nome,Cliente_atual.sexo,1,Cliente_atual.data_nascimento,Cliente_atual.rg,Cliente_atual.estado_expedidor,Cliente_atual.orgao_emissor,Cliente_atual.data_expedicao,Cliente_atual.estado,Cliente_atual.cidade_codigo,Cliente_atual.telefone,1212,Cliente_atual.cep,Cliente_atual.endereco,Cliente_atual.num,Cliente_atual.bairro,Cliente_atual.cidade_codigo,Cliente_atual.estado,Cliente_atual.nome_mae,Cliente_atual.nome_pai,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta,Cliente_atual.matricula,2,Cliente_atual.especie,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta)
+        Cliente_atual.codigo_cliente = cadastrar_dados_pessoais_facta(Cliente_atual.token_facta,Cliente_atual.id_simulador,Cliente_atual.cpf,Cliente_atual.nome,Cliente_atual.sexo,1,Cliente_atual.data_nascimento,Cliente_atual.rg,Cliente_atual.estado_expedidor,Cliente_atual.orgao_emissor,Cliente_atual.data_expedicao,Cliente_atual.estado,Cliente_atual.cidade_codigo,Cliente_atual.telefone,1212,Cliente_atual.cep,Cliente_atual.endereco,Cliente_atual.num,Cliente_atual.bairro,Cliente_atual.cidade_codigo,Cliente_atual.estado,Cliente_atual.nome_mae,Cliente_atual.nome_pai,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta,Cliente_atual.matricula,Cliente_atual.tipo_conta,Cliente_atual.especie,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta)
         Cliente_atual.ade,Cliente_atual.link = finalizar_cadastro_facta(Cliente_atual.token_facta,Cliente_atual.codigo_cliente,Cliente_atual.id_simulador)
         url_facta(Cliente_atual.token_facta,Cliente_atual.ade)
 #         except:
