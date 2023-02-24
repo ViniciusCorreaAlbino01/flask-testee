@@ -113,6 +113,7 @@ def contratar():
         Cliente_atual.agencia = request.form.get("agencia")
         Cliente_atual.conta = request.form.get("conta")
         Cliente_atual.especie = request.form.get("especie")
+        print(Cliente_atual.especie)
         Cliente_atual.matricula = request.form.get("matricula")
         Cliente_atual.tipo_conta = request.form.get("tipo_conta")
         Cliente_atual.token_facta = get_token_facta()
@@ -138,7 +139,7 @@ def contratar():
             Cliente_atual.ade,Cliente_atual.link = finalizar_cadastro_facta(Cliente_atual.token_facta,Cliente_atual.codigo_cliente,Cliente_atual.id_simulador)
             url_facta(Cliente_atual.token_facta,Cliente_atual.ade)
         except:
-            None
+            Cliente_atual.link = ''
         if 'rg' in Cliente_atual.codigo_cliente:
             return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = '',nome_mae = Cliente_atual.nome_mae,nome_pai = Cliente_atual.nome_pai,orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
         if 'data_expedicao' in Cliente_atual.codigo_cliente:
@@ -157,8 +158,10 @@ def contratar():
             return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = Cliente_atual.rg,nome_mae = '',nome_pai = Cliente_atual.nome_pai,orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
         if 'nome_pai' in Cliente_atual.codigo_cliente:
             return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = Cliente_atual.rg,nome_mae = Cliente_atual.nome_mae,nome_pai = '',orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
-        if Cliente_atual.link != None:
+        if Cliente_atual.link != '':
             return redirect('/formalizacao')
+        if Cliente_atual.link == '':
+            return render_template('Erro.html')
     else:
         if Cliente_atual.nome_mae != None:
             return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = Cliente_atual.rg,nome_mae = Cliente_atual.nome_mae,nome_pai = Cliente_atual.nome_pai,orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
