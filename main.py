@@ -161,12 +161,9 @@ def contratar():
             return redirect('/formalizacao')
     else:
         if Cliente_atual.nome_mae != None:
-            try:
-                return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = Cliente_atual.rg,nome_mae = Cliente_atual.nome_mae,nome_pai = Cliente_atual.nome_pai,orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
-            except:
-                return render_template('pag2.html',form = form)
+            return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = Cliente_atual.rg,nome_mae = Cliente_atual.nome_mae,nome_pai = Cliente_atual.nome_pai,orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
         else:
-            return render_template('Erro.html')
+            return render_template('pag2.html',form = form)
     
         
             
