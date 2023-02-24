@@ -3,19 +3,20 @@ import mysql.connector,sys
 
 def consulta_database(cpf):
     cpf = cpf.lstrip('0')
-    conexao_railway = mysql.connector.connect(
-        host = 'localhost',
-        port = '3306',
-        user = 'root',
-        password = '',
-        database = 'Bases'
-    )
-
-    cursor_railway = conexao_railway.cursor()
-    comando = f'Select * from Clientes where cpf = {cpf}'
-    cursor_railway.execute(comando)
-    rows = cursor_railway.fetchall()
     try:
+        conexao_railway = mysql.connector.connect(
+            host = 'localhost',
+            port = '3306',
+            user = 'root',
+            password = '',
+            database = 'Bases'
+        )
+
+        cursor_railway = conexao_railway.cursor()
+        comando = f'Select * from Clientes where cpf = {cpf}'
+        cursor_railway.execute(comando)
+        rows = cursor_railway.fetchall()
+    
         dados = rows[0]
         especie = dados[6]
         matricula = dados[7]
