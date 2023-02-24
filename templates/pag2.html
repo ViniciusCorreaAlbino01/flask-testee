@@ -51,6 +51,12 @@
                 {{ form.estado (class='form2')}}
                 <label for="cep" class="form2">CEP:</label>
                 {{ form.cep (placeholder='Preencha com seu CEP',value=cep,class='form2') }}
+                <label for="tipo_conta"></label>
+                {{ form.tipo_conta (class = 'form2')}}
+                <label for="matricula" class="form2"></label>
+                {{ form.matricula (placeholder = 'Preencha com o n° do seu benefício'class = 'form2')}}
+                <label for="especie"></label>
+                {{form.especie (class = 'form2')}}
                 <label for="banco" class="form2">Banco:</label>
                 {{ form.banco (placeholder = 'Preencha com o código do seu banco Ex: 001',class='form2') }}
                 <label for="agencia" class="form2">Agência:</label>
