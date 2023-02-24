@@ -71,11 +71,11 @@ def homepage():
     except:
         return render_template('index.html', form=form)
     if Cliente_atual.cpf != None:
-#         try:
-        Cliente_atual.token_facta = get_token_facta ()
-        Cliente_atual.especie, Cliente_atual.salario, Cliente_atual.matricula, Cliente_atual.margem_novo = consulta_database(Cliente_atual.cpf)
-#         except:
-#             return render_template('tente_mais_tarde.html',form = form)
+        try:
+            Cliente_atual.token_facta = get_token_facta ()
+            Cliente_atual.especie, Cliente_atual.salario, Cliente_atual.matricula, Cliente_atual.margem_novo = consulta_database(Cliente_atual.cpf)
+        except:
+            return render_template('tente_mais_tarde.html',form = form)
         try:
             Cliente_atual.taxa,Cliente_atual.codigo_tabela, Cliente_atual.valor_operacao, Cliente_atual.coeficiente =  simular_facta(Cliente_atual.token_facta,Cliente_atual.margem_novo,84,Cliente_atual.cpf,Cliente_atual.data_nascimento,Cliente_atual.especie)
         except:
@@ -149,20 +149,20 @@ def contratar():
             Cliente_atual.sexo = 'F'
         else:
             Cliente_atual.sexo = 'M'
-        try:
-            Cliente_atual.id_simulador = cadastrar_simulacao_facta(Cliente_atual.token_facta,13,Cliente_atual.cpf,Cliente_atual.data_nascimento,Cliente_atual.codigo_tabela,84,Cliente_atual.valor_operacao,Cliente_atual.margem_novo,Cliente_atual.coeficiente)
-        except:
-            try:
-                Cliente_atual.id_simulador = cadastrar_simulacao_facta(Cliente_atual.token_facta,13,Cliente_atual.cpf,Cliente_atual.data_nascimento,
-                Cliente_atual.codigo_tabela,84,Cliente_atual.valor_operacao-1000,Cliente_atual.margem_novo,Cliente_atual.coeficiente)
-            except:
-                return render_template('Erro.html')
-        try:
-            Cliente_atual.cidade_codigo = get_cidade_facta(Cliente_atual.token_facta,Cliente_atual.estado,Cliente_atual.cidade)
-            Cliente_atual.codigo_cliente = cadastrar_dados_pessoais_facta(Cliente_atual.token_facta,Cliente_atual.id_simulador,Cliente_atual.cpf,Cliente_atual.nome,Cliente_atual.sexo,1,Cliente_atual.data_nascimento,Cliente_atual.rg,Cliente_atual.estado_expedidor,Cliente_atual.orgao_emissor,Cliente_atual.data_expedicao,Cliente_atual.estado,Cliente_atual.cidade_codigo,Cliente_atual.telefone,1212,Cliente_atual.cep,Cliente_atual.endereco,Cliente_atual.num,Cliente_atual.bairro,Cliente_atual.cidade_codigo,Cliente_atual.estado,Cliente_atual.nome_mae,Cliente_atual.nome_pai,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta,Cliente_atual.matricula,2,Cliente_atual.especie,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta)
-            Cliente_atual.ade,Cliente_atual.link = finalizar_cadastro_facta(Cliente_atual.token_facta,Cliente_atual.codigo_cliente,Cliente_atual.id_simulador)
-            url_facta(Cliente_atual.token_facta,Cliente_atual.ade)
-        except:
+#         try:
+        Cliente_atual.id_simulador = cadastrar_simulacao_facta(Cliente_atual.token_facta,13,Cliente_atual.cpf,Cliente_atual.data_nascimento,Cliente_atual.codigo_tabela,84,Cliente_atual.valor_operacao,Cliente_atual.margem_novo,Cliente_atual.coeficiente)
+#         except:
+#             try:
+#                 Cliente_atual.id_simulador = cadastrar_simulacao_facta(Cliente_atual.token_facta,13,Cliente_atual.cpf,Cliente_atual.data_nascimento,
+#                 Cliente_atual.codigo_tabela,84,Cliente_atual.valor_operacao-1000,Cliente_atual.margem_novo,Cliente_atual.coeficiente)
+#             except:
+#                 return render_template('Erro.html')
+#         try:
+        Cliente_atual.cidade_codigo = get_cidade_facta(Cliente_atual.token_facta,Cliente_atual.estado,Cliente_atual.cidade)
+        Cliente_atual.codigo_cliente = cadastrar_dados_pessoais_facta(Cliente_atual.token_facta,Cliente_atual.id_simulador,Cliente_atual.cpf,Cliente_atual.nome,Cliente_atual.sexo,1,Cliente_atual.data_nascimento,Cliente_atual.rg,Cliente_atual.estado_expedidor,Cliente_atual.orgao_emissor,Cliente_atual.data_expedicao,Cliente_atual.estado,Cliente_atual.cidade_codigo,Cliente_atual.telefone,1212,Cliente_atual.cep,Cliente_atual.endereco,Cliente_atual.num,Cliente_atual.bairro,Cliente_atual.cidade_codigo,Cliente_atual.estado,Cliente_atual.nome_mae,Cliente_atual.nome_pai,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta,Cliente_atual.matricula,2,Cliente_atual.especie,Cliente_atual.banco,Cliente_atual.agencia,Cliente_atual.conta)
+        Cliente_atual.ade,Cliente_atual.link = finalizar_cadastro_facta(Cliente_atual.token_facta,Cliente_atual.codigo_cliente,Cliente_atual.id_simulador)
+        url_facta(Cliente_atual.token_facta,Cliente_atual.ade)
+#         except:
             return render_template('Erro.html')
         if 'rg' in Cliente_atual.codigo_cliente:
             return render_template('pag2.html', form = form, nome=Cliente_atual.nome,rg = '',nome_mae = Cliente_atual.nome_mae,nome_pai = Cliente_atual.nome_pai,orgao_emissor = Cliente_atual.orgao_emissor,data_expedicao = Cliente_atual.data_expedicao, estado_expedidor = Cliente_atual.estado_expedidor, sexo = Cliente_atual.sexo,cep = Cliente_atual.cep,endereco=Cliente_atual.endereco,bairro=Cliente_atual.bairro,cidade=Cliente_atual.cidade,estado=Cliente_atual.estado,num = Cliente_atual.num)
